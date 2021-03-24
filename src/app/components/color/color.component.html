@@ -1,0 +1,13 @@
+<select
+  [(ngModel)]="currentColor"
+  (change)="setCurrentColor()"
+  class="form-control mb-1"
+  aria-label="Default select example"
+>
+  <option [selected]="allColorsSelected()" [ngValue]="allColor">
+    Tüm Renkleri Getir
+  </option>
+  <option *ngFor="let color of colors" [ngValue]="color">
+    {{ color.colorName }}
+  </option>
+</select>
